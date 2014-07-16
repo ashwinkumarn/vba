@@ -1,0 +1,10 @@
+  Sub File_Picker()
+    With Application.FileDialog(msoFileDialogFilePicker)
+        .Filters.Clear
+        .Filters.Add "Excel(.xls,.xlsx,.xlsm)", "*.xls,*.xlsm,*.xlsx", 1
+        .InitialFileName = ActiveWorkbook.Path & "\"
+        .Show
+        If .SelectedItems.Count = 0 Then GoTo 1
+        fldr = .SelectedItems(1)
+1   End With
+End Sub
