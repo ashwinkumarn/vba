@@ -1,0 +1,10 @@
+Sub get_file()
+Dim x As Workbook, y As Workbook
+Dim ws1 As Worksheet, ws2 As Worksheet
+
+Filepath = Application.GetOpenFilename
+MsgBox Filepath
+Workbooks.Open (Filepath)
+Total = ActiveWorkbook.Worksheets.Count
+
+End Sub
