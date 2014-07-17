@@ -1,0 +1,12 @@
+Private Sub Workbook_Open()
+Dim i, LastRow
+
+LastRow = Sheets("Sheet1").Range("A" & Rows.Count).End(xlUp).Row
+Sheets("Sheet2").Range("A1:Q10000").ClearContents
+For i = 2 To LastRow
+If Sheets("Sheet1").Cells(i, "E").Value = "hjg" Then
+Sheets("Sheet1").Cells(i, "E").EntireRow.Copy Destination:=Sheets("Sheet2").Range("A" & Rows.Count).End(xlUp).Offset(1)
+End If
+Next i
+
+End Sub
